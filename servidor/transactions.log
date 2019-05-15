@@ -1,0 +1,22 @@
+15/05/2019 17:55:40: * Iniciando transação. Tipo 'packages'.
+15/05/2019 17:55:40: Lendo. Banco de Dados Efetivo.
+15/05/2019 17:55:40: * Fim de transação. Tipo 'packages'. 
+|
+15/05/2019 17:55:41: * Iniciando transação. Tipo 'package_register'.
+15/05/2019 17:55:41: Lendo. Banco de Dados Efetivo.
+15/05/2019 17:55:41: Salvando. Banco de dados Efetivo.
+15/05/2019 17:55:41: * Fim de transação. Tipo 'package_register'. 
+|
+15/05/2019 17:55:41: * Iniciando transação. Tipo 'packages'.
+15/05/2019 17:55:41: Lendo. Banco de Dados Efetivo.
+15/05/2019 17:55:41: * Fim de transação. Tipo 'packages'. 
+|
+15/05/2019 17:55:43: * Iniciando transação. Tipo 'package_pay'.
+15/05/2019 17:55:43: * Iniciando Sub-Transação de Compra.
+15/05/2019 17:55:43: * Finalizando Sub-Transação de Compra.
+15/05/2019 17:55:43: * Fim de transação. Tipo 'package_pay'. 
+|
+15/05/2019 17:55:43: * Iniciando transação. Tipo 'packages'.
+15/05/2019 17:55:43: Lendo. Banco de Dados Efetivo.
+15/05/2019 17:55:43: * Fim de transação. Tipo 'packages'. 
+|

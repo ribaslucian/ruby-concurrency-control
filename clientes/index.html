@@ -1,0 +1,128 @@
+<html>
+
+    <head>
+        <title>Hotel</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    </head>
+
+    <body ng-app="App" ng-controller="HotelController" ng-init="list()">
+
+        <br/>
+
+        <div class="container">
+
+            <h1>
+                Compra de Pacotes
+            </h1>
+
+            <hr/>
+
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-group">
+                        <label>Nome do Cliente:</label>
+                        <input type="text" class="form-control" ng-model="package.client_id" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cidade Destino:</label>
+                        <input type="text" class="form-control" ng-model="package.city_destiny" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preço Máximo:</label>
+                        <input type="text" class="form-control" ng-model="package.max_price" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Número de Pessoas:</label>
+                        <input type="text" class="form-control" ng-model="package.people" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data de Ida:</label>
+                        <input type="text" class="form-control" ng-model="package.date_departure" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data de Volta:</label>
+                        <input type="text" class="form-control" ng-model="package.date_return" />
+                    </div>
+
+                    <hr/>
+
+                    <button type="submit" class="btn btn-primary btn-block" ng-click="register()">
+                        Cadastrar
+                    </button>
+                </div>
+
+                <div class="col-10">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label>ID do Pacote:</label>
+                            <input type="email" class="form-control ">
+                        </div>
+
+                        <div class="form-group col-md-8">
+
+                            <div style="margin-top: 31px;">
+                                <button class="btn btn-primary mb-2">
+                                    Comprar
+                                </button>
+
+                                <button class="btn btn-danger mb-2">
+                                    Cancelar
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cliente ID</th>
+                                <th>Pacote ID</th>
+                                <th>Cidade Destino</th>
+                                <th>Data de Ida</th>
+                                <th>Data de Volta</th>
+                                <th>Número de Pessoas</th>
+                                <th>Preço Máximo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                            </tr>
+                            
+                            <tr>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                                <td>Cliente ID</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <script type="text/javascript" src="angular/angular.min.js"></script>
+        <script type="text/javascript" src="angular/application.js"></script>
+    </body>
+</html>
