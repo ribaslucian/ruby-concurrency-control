@@ -1,0 +1,243 @@
+<html>
+
+    <head>
+        <title>Servidor de Pacotes</title>
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    </head>
+
+    <body
+        ng-app="App"
+        ng-controller="PackagesController"
+        ng-init="
+            flight.city_destiny = 'Cidade 1';
+            flight.price = 10.99;
+            flight.date_departure = '01/12/2019';
+            flight.date_return = '02/12/2019';
+            flight.status = 'disponivel';
+            flights_list();
+
+            host.name = 'Hotel 1';
+            host.city = 'Cidade 1';
+            host.price = 10.99;
+            host.status = 'disponivel';
+            hosts_list();
+            
+            packages_list();
+        ">
+
+        <br/>
+
+        <div class="container">
+
+            <h1>
+                Servidor
+            </h1>
+
+            <hr/>
+            <br/>
+
+            <h4>
+                Voos
+            </h4>
+
+            <hr/>
+
+            <div class="row">
+                <div class="col-3" style="border-right: 1px solid #eee;">
+                    <div class="form-group">
+                        <label>Cidade Destino:</label>
+                        <input type="text" class="form-control" ng-model="flight.city_destiny" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preço:</label>
+                        <input type="text" class="form-control" ng-model="flight.price" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data de Ida:</label>
+                        <input type="text" class="form-control" ng-model="flight.date_departure" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Data de Volta:</label>
+                        <input type="text" class="form-control" ng-model="flight.date_return" />
+                    </div>
+
+                    <hr/>
+
+                    <button type="submit" class="btn btn-primary btn-block" ng-click="flight_register()">
+                        Cadastrar
+                    </button>
+
+                    <br/>
+                    <br/>
+                </div>
+
+                <div class="col-9">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>ID do Voo:</label>
+                            <input type="text" class="form-control" ng-model="flight.flight_id">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <div style="margin-top: 31px;">
+                                <button class="btn btn-danger mb-2" ng-click="flight_cancel()">
+                                    Remover
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID do Voo</th>
+                                <th>Cidade Destino</th>
+                                <th>Data de Ida</th>
+                                <th>Data de Volta</th>
+                                <th>Preço</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="(id, h) in flights">
+                                <td>{{id}}</td>
+                                <td>{{h.city_destiny}}</td>
+                                <td>{{h.date_departure}}</td>
+                                <td>{{h.date_return}}</td>
+                                <td>{{h.price}}</td>
+                                <td>{{h.status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+            <br/>
+
+            <h4>
+                Hospedagens
+            </h4>
+
+            <hr/>
+
+            <div class="row">
+
+                <div class="col-3" style="border-right: 1px solid #eee;">
+                    <div class="form-group">
+                        <label>Nome:</label>
+                        <input type="text" class="form-control" ng-model="host.name" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cidade:</label>
+                        <input type="text" class="form-control" ng-model="host.city" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preço:</label>
+                        <input type="text" class="form-control" ng-model="host.price" />
+                    </div>
+
+                    <hr/>
+
+                    <button type="submit" class="btn btn-primary btn-block" ng-click="host_register()">
+                        Cadastrar
+                    </button>
+                </div>
+
+                <div class="col-9">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label>ID da Hospedagem:</label>
+                            <input type="text" class="form-control" ng-model="host.host_id">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <div style="margin-top: 31px;">
+                                <button class="btn btn-danger mb-2" ng-click="host_cancel()">
+                                    Remover
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cidade</th>
+                                <th>Preço</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="(id, h) in hosts">
+                                <td>{{id}}</td>
+                                <td>{{h.name}}</td>
+                                <td>{{h.city}}</td>
+                                <td>{{h.price}}</td>
+                                <td>{{h.status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <br/>
+            <br/>
+
+            <h4>
+                Pacotes
+            </h4>
+
+            <hr/>
+
+            <div class="row">
+                <div class="col-12">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Cliente ID</th>
+                                <th>Pacote ID</th>
+                                <th>Cidade Destino</th>
+                                <th>Data de Ida</th>
+                                <th>Data de Volta</th>
+                                <th>Preço Máximo</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody  ng-repeat="(client_id, client_packages) in clients_packages">
+                            <tr ng-repeat="(package_id, p) in client_packages">
+                                <td>{{client_id}}</td>
+                                <td>{{package_id}}</td>
+                                <td>{{p.city_destiny}}</td>
+                                <td>{{p.date_departure}}</td>
+                                <td>{{p.date_return}}</td>
+                                <td>{{p.max_price}}</td>
+                                <td>{{p.status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+        <br/>
+
+        <script type="text/javascript" src="angular/angular.min.js"></script>
+        <script type="text/javascript" src="angular/application.js"></script>
+    </body>
+</html>
