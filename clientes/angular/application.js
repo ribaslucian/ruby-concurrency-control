@@ -42,7 +42,8 @@ app.controller('PackagesController', function ($scope, $http) {
             url: 'http://localhost:8080/packages',
             data: $scope.package,
         }).then(function (response) {
-            $scope.packages_list();
+            console.log(response.data);
+            // $scope.packages_list();
         });
     }
 

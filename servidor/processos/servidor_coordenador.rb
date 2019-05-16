@@ -3,29 +3,30 @@ class ServidorCoordenador
   def self.transaction_pay
 
     Mutex.new.synchronize {
-      log("* Iniciando Sub-Transação de Compra.")
-      process_id = random()
+      process_id = SecureRandom.hex[0..5]
+      package = JSON.parse(@@request.env["rack.input"].read)
 
+      log("* Iniciando Sub-Transação de Compra. Processo #{process_id}.")
 
-      host_pay  = ServidorHotel.compra_hospedagem package, process_id
+      host_pay = ServidorHotel.compra_hospedagem(process_id, package)
       if host_pay != true
         DatabaseJson.tmp_delete process_id
-        return {message: "Erro ao comprar hospedagem.", erro: true}
+        return {message: "Erro ao comprar hospedagem.", error: true}
       end
 
-      flight_pay = ServidorVoo.compra_passagem package, process_id
+      flight_pay = ServidorVoo.compra_passagem(process_id, package)
       if flight_pay != true
         DatabaseJson.tmp_delete process_id
-        return {message: "Erro ao comprar Voo.", erro: true}
+        return {message: "Erro ao comprar Voo.", error: true}
       end
 
+      # compra && hospedagem correta, oficializa a compra
       DatabaseJson.tmp_effect process_id
 
       # protocol commit
-      # compra && hospedagem então compra
       log("* Finalizando Sub-Transação de Compra.")
 
-      return {erro: false}
+      return {error: false, params: process_id}
     }
   end
 

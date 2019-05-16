@@ -22,13 +22,14 @@ class DatabaseJson
 
 
   def self.tmp_read process_id
-    log("Lendo. Banco de dados temporário. Processo #{process_id}.");
-
     db_file = "database_#{process_id}.tmp.json"
 
     if !File.exist? db_file
+      log("Criando. Banco de dados temporário. Processo #{process_id}. Arquivo #{db_file}.");
       FileUtils.cp('database.json', db_file)
     end
+
+    log("Lendo. Banco de dados temporário. Processo #{process_id}.");
 
     JSON.parse File.read(db_file)
   end
@@ -44,7 +45,7 @@ class DatabaseJson
 
 
   def self.tmp_delete process_id
-    log("Deletando. Banco de dados temporário. Processo #{process_id}.");
+    log("Deletando. Banco de dados temporário. Processo #{process_id}. Arquivo database_#{process_id}.tmp.json.");
     File.delete "database_#{process_id}.tmp.json"
   end
 

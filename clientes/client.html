@@ -20,7 +20,7 @@
             package.status = 'Pendente';
             packages_list();
         ">
-        
+
         <br/>
 
         <div class="container">
@@ -63,7 +63,7 @@
                     <button type="submit" class="btn btn-primary btn-block" ng-click="package_register()">
                         Cadastrar
                     </button>
-                    
+
                     <br/>
                     <br/>
                 </div>
@@ -82,7 +82,7 @@
                                 <button class="btn btn-danger mb-2" ng-click="package_cancel()">
                                     Cancelar
                                 </button>
-                                
+
                                 <button class="btn btn-primary mb-2" ng-click="package_pay()">
                                     Comprar
                                 </button>
@@ -103,7 +103,7 @@
                                 <th>Status</th>
                             </tr>
                         </thead>
-                        
+
                         <tbody  ng-repeat="(client_id, client_packages) in clients_packages">
                             <tr ng-repeat="(package_id, p) in client_packages">
                                 <td>{{client_id}}</td>

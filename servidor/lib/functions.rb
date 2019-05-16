@@ -14,7 +14,3 @@ end
 def log message
   File.write('transactions.log', Time.now().strftime('%d/%m/%Y %H:%M:%S') + ': ' + message + "\n", mode: 'a')
 end
-
-def log random
-  return SecureRandom.hex[0..5]
-end

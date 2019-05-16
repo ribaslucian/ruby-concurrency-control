@@ -1,22 +1,13 @@
-15/05/2019 17:55:40: * Iniciando transação. Tipo 'packages'.
-15/05/2019 17:55:40: Lendo. Banco de Dados Efetivo.
-15/05/2019 17:55:40: * Fim de transação. Tipo 'packages'. 
-|
-15/05/2019 17:55:41: * Iniciando transação. Tipo 'package_register'.
-15/05/2019 17:55:41: Lendo. Banco de Dados Efetivo.
-15/05/2019 17:55:41: Salvando. Banco de dados Efetivo.
-15/05/2019 17:55:41: * Fim de transação. Tipo 'package_register'. 
-|
-15/05/2019 17:55:41: * Iniciando transação. Tipo 'packages'.
-15/05/2019 17:55:41: Lendo. Banco de Dados Efetivo.
-15/05/2019 17:55:41: * Fim de transação. Tipo 'packages'. 
-|
-15/05/2019 17:55:43: * Iniciando transação. Tipo 'package_pay'.
-15/05/2019 17:55:43: * Iniciando Sub-Transação de Compra.
-15/05/2019 17:55:43: * Finalizando Sub-Transação de Compra.
-15/05/2019 17:55:43: * Fim de transação. Tipo 'package_pay'. 
-|
-15/05/2019 17:55:43: * Iniciando transação. Tipo 'packages'.
-15/05/2019 17:55:43: Lendo. Banco de Dados Efetivo.
-15/05/2019 17:55:43: * Fim de transação. Tipo 'packages'. 
+15/05/2019 23:31:26: * Iniciando transação. Tipo 'package_pay'.
+15/05/2019 23:31:26: * Iniciando Sub-Transação de Compra. Processo cdb518.
+15/05/2019 23:31:26: Compra de hospedagem iniciada. Processo cdb518.
+15/05/2019 23:31:26: Criando. Banco de dados temporário. Processo cdb518. Arquivo database_cdb518.tmp.json.
+15/05/2019 23:31:26: Lendo. Banco de dados temporário. Processo cdb518.
+15/05/2019 23:31:26: Hospedagem Encontrada. Comprada. Processo cdb518.
+15/05/2019 23:31:26: Salvando. Banco de dados temporário. Processo cdb518.
+15/05/2019 23:31:26: Compra de passagem iniciada. Processo cdb518.
+15/05/2019 23:31:26: Lendo. Banco de dados temporário. Processo cdb518.
+15/05/2019 23:31:26: Voo não encontrada. Cancelando... Processo cdb518.
+15/05/2019 23:31:26: Deletando. Banco de dados temporário. Processo cdb518. Arquivo database_cdb518.tmp.json.
+15/05/2019 23:31:26: * Fim de transação. Tipo 'package_pay'. 
 |
